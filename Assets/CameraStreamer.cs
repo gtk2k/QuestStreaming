@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 using WebSocketSharp;
 using WebSocketSharp.Server;
 
-public class cs : MonoBehaviour
+public class CameraStreamer : MonoBehaviour
 {
     public Camera cam;
     public GameObject display;
@@ -98,7 +98,7 @@ public class cs : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(get());
+        //StartCoroutine(get());
         Debug.Log($"=== OnEnable");
         ctx = SynchronizationContext.Current;
         StartCoroutine(WebRTC.Update());
@@ -122,14 +122,14 @@ public class cs : MonoBehaviour
         wss.Start();
 #endif
     }
-    IEnumerator get()
-    {
-        Debug.Log($"===GET");
-        var req = UnityWebRequest.Get("https://google.com");
-        yield return req.SendWebRequest();
+    //IEnumerator get()
+    //{
+    //    Debug.Log($"===GET");
+    //    var req = UnityWebRequest.Get("https://google.com");
+    //    yield return req.SendWebRequest();
 
-        Debug.Log($"===Get Result {req.responseCode}> {req.downloadHandler.text}");
-    }
+    //    Debug.Log($"===Get Result {req.responseCode}> {req.downloadHandler.text}");
+    //}
 
 #if !UNITY_EDITOR && UNITY_ANDROID
     private void ConnectSignaling()

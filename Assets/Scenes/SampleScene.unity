@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 423922117}
   - component: {fileID: 423922116}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   display: {fileID: 423922115}
-  signalingURL: wss://1a2f-219-98-13-139.ngrok-free.app
+  signalingURL: 
 --- !u!4 &597828209
 Transform:
   m_ObjectHideFlags: 0
