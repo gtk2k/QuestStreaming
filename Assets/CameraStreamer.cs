@@ -137,7 +137,10 @@ public class CameraStreamer : MonoBehaviour
         Debug.Log($"=== ConnectSignaling > {signalingURL}");
         ws = new WebSocket(signalingURL);
         ws.Log.Level = LogLevel.Debug;
-        ws.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12 | System.Security.Authentication.SslProtocols.Tls11 | System.Security.Authentication.SslProtocols.Tls;
+        if (signalingURL.StartsWith("wss"))
+        {
+            ws.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12 | System.Security.Authentication.SslProtocols.Tls11 | System.Security.Authentication.SslProtocols.Tls;
+        }
         ws.OnOpen += Ws_OnOpen;
         ws.OnMessage += (s, e) => OnMessage(e.Data);
         ws.OnClose += Ws_OnClose;
