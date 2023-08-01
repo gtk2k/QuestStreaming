@@ -279,9 +279,9 @@ public class CameraStreamer : MonoBehaviour
                 videoTrack.OnVideoReceived += VideoTrack_OnVideoReceived;
             }
         };
-        var mediaStream = new MediaStream();
+        //var mediaStream = new MediaStream();
         var videoTrack = new VideoStreamTrack(rt);
-        mediaStream.AddTrack(videoTrack);
+        //mediaStream.AddTrack(videoTrack);
         peer.AddTrack(videoTrack);
 
         return peer;
